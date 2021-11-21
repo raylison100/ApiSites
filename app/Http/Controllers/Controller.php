@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -46,12 +47,15 @@ class Controller extends BaseController
      */
     public function store(Request $request): JsonResponse
     {
-        dd($request->all());
         if ($this->validator) {
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
         }
-        $response = $this->service->create($request->all());
-        return response()->json($response);
+        try{
+            $response = $this->service->create($request->all());
+            return response()->json($response);
+        }catch (Exception $e){
+            return $this->returnError($e->getMessage(), $e->getCode());
+        }
     }
 
     /**
@@ -65,7 +69,12 @@ class Controller extends BaseController
         if ($this->validator) {
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
         }
-        return response()->json($this->service->update($request->all(), $id));
+        try{
+            $response = response()->json($this->service->update($request->all(), $id));
+            return response()->json($response);
+        }catch (Exception $e){
+            return $this->returnError($e->getMessage(), $e->getCode());
+        }
     }
 
     /**
@@ -95,5 +104,18 @@ class Controller extends BaseController
     public function findWhere(array $data): JsonResponse
     {
         return response()->json($this->service->findWhere($data), 200);
+    }
+
+    /**
+     * @param $message
+     * @param $error
+     * @return JsonResponse
+     */
+    protected function returnError($message, $error): JsonResponse
+    {
+        return response()->json([
+            "error"       => true,
+            'message' => $message,
+        ], $error);
     }
   }

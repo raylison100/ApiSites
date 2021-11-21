@@ -3,7 +3,9 @@
 namespace App\Services;
 
 use App\AppHelper;
-use GuzzleHttp\Client;
+use Exception;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 /**
  * Class AppService
@@ -22,17 +24,28 @@ class AppService
      */
     public function all(int $limit = 15)
     {
-        return $this->repository->paginate($limit);
+       return $this->repository->paginate($limit);
     }
 
     /**
      * @param array $data
      * @param bool $skipPresenter
      * @return mixed
+     * @throws Exception
      */
     public function create(array $data, bool $skipPresenter = false)
     {
-        return $skipPresenter ? $this->repository->skipPresenter()->create($data) : $this->repository->create($data);
+        try {
+            DB::beginTransaction();
+            $entity = $skipPresenter ? $this->repository->skipPresenter()->create($data)
+                : $this->repository->create($data);
+            DB::commit();
+            return $entity;
+        }catch (Exception $e){
+            DB::rollBack();
+            Log::error($e->getMessage());
+            throw new Exception("failed to create", 400);
+        }
     }
 
     /**
@@ -53,7 +66,17 @@ class AppService
      */
     public function update(array $data, $id, bool $skipPresenter = false)
     {
-        return $skipPresenter ? $this->repository->skipPresenter()->update($data, $id) : $this->repository->update($data, $id);
+        try {
+            DB::beginTransaction();
+            $entity = $skipPresenter ? $this->repository->skipPresenter()->update($data, $id)
+                : $this->repository->update($data, $id);
+            DB::commit();
+            return $entity;
+        }catch (Exception $e){
+            DB::rollBack();
+            Log::error($e->getMessage());
+            throw new Exception("failed to update", 400);
+        }
     }
 
     /**

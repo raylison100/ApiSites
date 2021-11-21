@@ -29,5 +29,12 @@ class InputTypesSeed extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
+
+        DB::table('input_types')->insertOrIgnore([
+            'id'         => 3,
+            'name'       => 'Indefinido',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+        ]);
     }
 }
