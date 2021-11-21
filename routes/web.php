@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('healthz', function () {
-    return ['error' => false , 'message'=> 'ok'];
+    return ['error' => false , 'message'=> 'API SITES ON'];
 });
