@@ -27,9 +27,9 @@ class SitesTransformer extends TransformerAbstract
             'link'          => $model->link,
             'xpatch'        => $model->xpatch,
             'selector'      => $model->selector,
-            'run'           => $model->run,
-            'error'         => $model->error,
-            'created_at'    => $model->created_at->toDateTimeString(),
+            'run'           => $model->run ? "Sim" : "Não",
+            'error'         => $model->error ? "Sim" : "Não",
+            'created'       => $model->created_at->toDateTimeString(),
             'updated_at'    => $model->updated_at->toDateTimeString(),
         ];
     }

@@ -27,7 +27,7 @@ class Controller extends BaseController
      */
     public function index(Request $request): JsonResponse
     {
-        return response()->json($this->service->all($request->query->get('limit', 15)));
+        return response()->json($this->service->all($request->query->get('limit', 10)));
     }
 
     /**
