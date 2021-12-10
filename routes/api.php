@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::prefix('inputs')->group(function () {
-    Route::resource('/', 'InputsController');
+    Route::get('/', 'InputsController@index');
+    Route::post('/', 'InputsController@store');
+    Route::put('/{id}', 'InputsController@update');
 });
 
 Route::prefix('sites')->group(function () {
