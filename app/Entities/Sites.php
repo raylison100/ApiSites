@@ -23,7 +23,7 @@ class Sites extends Model implements Transformable
     protected $fillable = [
         'name',
         'link',
-        'xpatch',
+        'xpath',
         'selector',
         'run',
         'error',

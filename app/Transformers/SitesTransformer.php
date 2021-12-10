@@ -25,7 +25,7 @@ class SitesTransformer extends TransformerAbstract
             'id'            => (int) $model->id,
             'name'          => $model->name,
             'link'          => $model->link,
-            'xpatch'        => $model->xpatch,
+            'xpath'         => $model->xpath,
             'selector'      => $model->selector,
             'run'           => $model->run ? "Sim" : "Não",
             'error'         => $model->error ? "Sim" : "Não",

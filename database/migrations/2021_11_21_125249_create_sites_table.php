@@ -20,7 +20,7 @@ class CreateSitesTable extends Migration
             $table->bigInteger('id')->autoIncrement();
             $table->string('name', 30);
             $table->text('link');
-            $table->text('xpatch')->nullable();
+            $table->text('xpath')->nullable();
             $table->text('selector')->nullable();
             $table->boolean('run')->default(false);
             $table->boolean('error')->default(false);

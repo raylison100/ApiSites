@@ -8,11 +8,15 @@ Route::prefix('inputs')->group(function () {
 });
 
 Route::prefix('sites')->group(function () {
-    Route::resource('/', 'SitesController');
+    Route::get('/', 'SitesController@index');
+    Route::post('/', 'SitesController@store');
+    Route::put('/{id}', 'SitesController@update');
 });
 
 Route::prefix('inputs-types')->group(function () {
-    Route::resource('/', 'InputTypesController');
+    Route::get('/', 'InputTypesController@index');
+    Route::post('/', 'InputTypesController@store');
+    Route::put('/{id}', 'InputTypesController@update');
 });
 
 Route::get('/healthz', function () {

@@ -6,10 +6,10 @@ use Prettus\Repository\Contracts\CriteriaInterface;
 use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
- * Class FilterByStatusCriteria
+ * Class FilterBySiteRunCriteria
  * @package namespace App\Criteria;
  */
-class FilterBySubscriptionTypeCriteria extends AppCriteria implements CriteriaInterface
+class FilterBySiteRunCriteria extends AppCriteria implements CriteriaInterface
 {
 
     /**
@@ -19,11 +19,12 @@ class FilterBySubscriptionTypeCriteria extends AppCriteria implements CriteriaIn
      */
     public function apply($model, RepositoryInterface $repository)
     {
-        $type = $this->request->query->get('type');
+        $run = $this->request->query->get('run');
+ 
+        if(is_numeric($run)){
+            $model = $model->where('run',$run);  
+        }      
 
-        if ($type){
-            $model = $model->where('name', '=', $type);
-        }
         return $model;
     }
 }
