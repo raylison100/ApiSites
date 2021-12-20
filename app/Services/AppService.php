@@ -143,6 +143,15 @@ class AppService
     }
 
     /**
+     * @param $value
+     * @return mixed
+     */
+    public function removeAccentuationAndSpecialCharacters($value)
+    {
+        return AppHelper::removeAccentuationAndSpecialCharacters($value);
+    }
+
+    /**
      * @param $date
      * @return false|string
      */

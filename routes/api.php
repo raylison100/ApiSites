@@ -21,6 +21,11 @@ Route::prefix('inputs-types')->group(function () {
     Route::put('/{id}', 'InputTypesController@update');
 });
 
+Route::prefix('check-words')->group(function () {
+    Route::get('/personal', 'PersonalWordsController@check');
+    Route::get('/sensitive', 'SensitiveWordsController@check');
+});
+
 Route::get('/healthz', function () {
     return redirect('/healthz');
 });

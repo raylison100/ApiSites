@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             InputTypesSeed::class,
             SitesSeed::class,
+            PersonalWordsSeed::class,
+            SensitiveWordsSeed::class,
         ]);
     }
 }
