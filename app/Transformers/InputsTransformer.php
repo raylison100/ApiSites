@@ -25,7 +25,9 @@ class InputsTransformer extends TransformerAbstract
             'id'            => (int) $model->id,
             'name'          => $model->name,
             'site_id'       => $model->site_id,
+            'site_name'     => $model->site->name,
             'type_id'       => $model->type_id,
+            'type_name'     => $model->type->name,
             'created_at'    => $model->created_at->toDateTimeString(),
             'updated_at'    => $model->updated_at->toDateTimeString(),
         ];

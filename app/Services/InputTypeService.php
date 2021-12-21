@@ -22,6 +22,5 @@ class InputTypeService extends AppService
     public function __construct(InputTypesRepository $repository)
     {
         $this->repository = $repository;
-
     }
 }

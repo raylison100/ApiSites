@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('inputs')->group(function () {
     Route::get('/', 'InputsController@index');
+    Route::get('/select', 'InputsController@selectInputs');
     Route::post('/', 'InputsController@store');
     Route::put('/{id}', 'InputsController@update');
 });

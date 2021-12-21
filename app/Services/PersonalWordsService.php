@@ -22,7 +22,6 @@ class PersonalWordsService extends AppService
     public function __construct(PersonalWordsRepository $repository)
     {
         $this->repository = $repository;
-
     }
 
     public function check($check)
