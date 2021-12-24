@@ -33,4 +33,19 @@ class InputsController extends Controller
         $this->service = $service;
         $this->validator  = $validator;
     }
+
+    public function allSitesInformation()
+    {
+        return response()->json($this->service->allSitesInformation());
+    }
+
+    public function personalInformation()
+    {
+        return response()->json($this->service->personalInformation());
+    }
+
+    public function sensitiveInformation()
+    {
+        return response()->json($this->service->sensitiveInformation());
+    }
 }

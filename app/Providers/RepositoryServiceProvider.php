@@ -28,6 +28,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(\App\Repositories\InputTypesRepository::class, \App\Repositories\InputTypesRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\SensitiveWordsRepository::class, \App\Repositories\SensitiveWordsRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\PersonalWordsRepository::class, \App\Repositories\PersonalWordsRepositoryEloquent::class);
+        $this->app->bind(\App\Repositories\UndefinedWordsRepository::class, \App\Repositories\UndefinedWordsRepositoryEloquent::class);
         //:end-bindings:
     }
 }
