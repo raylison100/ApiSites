@@ -67,7 +67,7 @@ class PersonalWordsSeed extends Seeder
 
             [
                 'id'         => 8,
-                'name'       => 'sexo',
+                'name'       => 'email',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -81,21 +81,21 @@ class PersonalWordsSeed extends Seeder
 
             [
                 'id'         => 10,
-                'name'       => 'email',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-
-            [
-                'id'         => 11,
                 'name'       => 'data de nascimento',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
 
             [
-                'id'         => 12,
+                'id'         => 11,
                 'name'       => 'senha',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+
+            [
+                'id'         => 12,
+                'name'       => 'rua',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -109,48 +109,41 @@ class PersonalWordsSeed extends Seeder
 
             [
                 'id'         => 14,
-                'name'       => 'rua',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-
-            [
-                'id'         => 15,
                 'name'       => 'bairro',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
 
             [
-                'id'         => 16,
+                'id'         => 15,
                 'name'       => 'complemento',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
 
             [
-                'id'         => 17,
+                'id'         => 16,
                 'name'       => 'cidade',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
 
             [
-                'id'         => 18,
+                'id'         => 17,
                 'name'       => 'estado',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
 
             [
-                'id'         => 19,
+                'id'         => 18,
                 'name'       => 'pais',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
 
             [
-                'id'         => 20,
+                'id'         => 19,
                 'name'       => 'cep',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')

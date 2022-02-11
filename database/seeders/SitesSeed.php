@@ -17,22 +17,22 @@ class SitesSeed extends Seeder
     public function run()
     {
         DB::table('sites')->insertOrIgnore([
-            [
+            /* [
                 'id'         => 1,
                 'name'       => 'Americanas',
                 'link'       => 'https://cliente.americanas.com.br/simple-login/cadastro/pf?next=https%3A%2F%2Fwww.americanas.com.br%2F',
                 'selector'   => '#root > div > div.sc-cqJjjq.kuSkzX > form',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
+            ], */
+            /* [
                 'id'         => 2,
                 'name'       => 'Submarino',
                 'link'       => 'https://cliente.submarino.com.br/simple-login/cadastro/pf?next=https%3A%2F%2Fwww.submarino.com.br%2F',
                 'selector'   => '#root > div > div.cadastroForm-container > form',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
+            ], */
             [
                 'id'         => 3,
                 'name'       => 'Centauri Acrilicos',
@@ -41,14 +41,14 @@ class SitesSeed extends Seeder
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
-            [
+            /* [
                 'id'         => 4,
                 'name'       => 'Casas Bahia',
                 'link'       => 'https://carrinho.casasbahia.com.br/Checkout?Pagina=cadastrar&ReturnUrl=https://www.casasbahia.com.br&Email=raylison100@gmail.com#login',
                 'selector'   => '#cliente_cadastro > form',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
+            ], */
             [
                 'id'         => 5,
                 'name'       => 'Amazon',
@@ -73,14 +73,14 @@ class SitesSeed extends Seeder
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
-            [
+            /* [
                 'id'         => 8,
                 'name'       => 'Leroy Merlin',
-                'link'       => 'https://cliente.submarino.com.br/simple-login/cadastro/pf?next=https%3A%2F%2Fwww.submarino.com.br%2F',
-                'selector'   => '#root > div > div.cadastroForm-container > form',
+                'link'       => 'https://www.leroymerlin.com.br/cadastre-se?redirect=https%3A%2F%2Fwww.leroymerlin.com.br%2F',
+                'selector'   => 'body > div:nth-child(3) > div > div > div > div.css-1s2vgb1-row.e1eajedk0 > div > div > div:nth-child(1) > div > div.css-1twn1j8-card__body.egrrt132',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
+            ], */
             [
                 'id'         => 9,
                 'name'       => 'Drogaraia',
