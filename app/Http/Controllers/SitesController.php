@@ -31,6 +31,6 @@ class SitesController extends Controller
     public function __construct(SiteService $service, SitesValidator $validator)
     {
         $this->service = $service;
-        $this->validator  = $validator;
+        $this->validator = $validator;
     }
 }

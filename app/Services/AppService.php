@@ -24,7 +24,7 @@ class AppService
      */
     public function all(int $limit = 15)
     {
-       return $this->repository->paginate($limit);
+        return $this->repository->paginate($limit);
     }
 
     /**
@@ -41,7 +41,7 @@ class AppService
                 : $this->repository->create($data);
             DB::commit();
             return $entity;
-        }catch (Exception $e){
+        } catch (Exception $e) {
             DB::rollBack();
             Log::error($e->getMessage());
             throw new Exception("failed to create", 400);
@@ -72,7 +72,7 @@ class AppService
                 : $this->repository->update($data, $id);
             DB::commit();
             return $entity;
-        }catch (Exception $e){
+        } catch (Exception $e) {
             DB::rollBack();
             Log::error($e->getMessage());
             throw new Exception("failed to update", 400);
@@ -88,7 +88,7 @@ class AppService
     public function findWhere(array $data, bool $first = false, bool $skipPresenter = false)
     {
         $repository = $skipPresenter ? $this->repository->skipPresenter()->findWhere($data)
-                : $this->repository->findWhere($data);
+            : $this->repository->findWhere($data);
 
         return $first ? $repository->first() : $repository;
     }

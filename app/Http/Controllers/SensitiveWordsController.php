@@ -33,7 +33,7 @@ class SensitiveWordsController extends Controller
     public function __construct(SensitiveWordsService $service, SensitiveWordsValidator $validator)
     {
         $this->service = $service;
-        $this->validator  = $validator;
+        $this->validator = $validator;
     }
 
     /**

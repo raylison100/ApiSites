@@ -31,6 +31,6 @@ class InputTypesController extends Controller
     public function __construct(InputTypeService $service, InputTypesValidator $validator)
     {
         $this->service = $service;
-        $this->validator  = $validator;
+        $this->validator = $validator;
     }
 }

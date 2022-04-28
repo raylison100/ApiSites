@@ -25,10 +25,10 @@ class SitesRepositoryEloquent extends BaseRepository implements SitesRepository
     }
 
     /**
-    * Specify Validator class name
-    *
-    * @return mixed
-    */
+     * Specify Validator class name
+     *
+     * @return mixed
+     */
     public function validator()
     {
 

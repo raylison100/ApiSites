@@ -2,12 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Presenters\InputsPresenter;
-use Prettus\Repository\Eloquent\BaseRepository;
-use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\inputsRepository;
 use App\Entities\Inputs;
+use App\Presenters\InputsPresenter;
 use App\Validators\InputsValidator;
+use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
  * Class InputsRepositoryEloquent.
@@ -27,10 +25,10 @@ class InputsRepositoryEloquent extends BaseRepository implements InputsRepositor
     }
 
     /**
-    * Specify Validator class name
-    *
-    * @return mixed
-    */
+     * Specify Validator class name
+     *
+     * @return mixed
+     */
     public function validator()
     {
 

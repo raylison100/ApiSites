@@ -6,13 +6,13 @@ use App\Criterias\AppRequestCriteria;
 use App\Criterias\FilterBySiteCriteria;
 use App\Criterias\FilterByTypeCriteria;
 use App\Entities\Enum\InputTypeEnum;
+use App\Entities\Inputs;
 use App\Repositories\InputsRepository;
 use App\Repositories\InputTypesRepository;
 use App\Repositories\PersonalWordsRepository;
 use App\Repositories\SensitiveWordsRepository;
 use App\Repositories\SitesRepository;
 use App\Repositories\UndefinedWordsRepository;
-use App\Entities\Inputs;
 
 
 /**
@@ -38,12 +38,12 @@ class InputService extends AppService
      * @param SensitiveWordsRepository $sensitiveWordsRepository
      * @param UndefinedWordsRepository $undefinedWordsRepository
      */
-    public function __construct(InputsRepository $repository,
-            InputTypesRepository $inputTypeRepository,
-            SitesRepository $sitesRepository,
-            PersonalWordsRepository $personalWordsRepository,
-            SensitiveWordsRepository $sensitiveWordsRepository,
-            UndefinedWordsRepository $undefinedWordsRepository
+    public function __construct(InputsRepository         $repository,
+                                InputTypesRepository     $inputTypeRepository,
+                                SitesRepository          $sitesRepository,
+                                PersonalWordsRepository  $personalWordsRepository,
+                                SensitiveWordsRepository $sensitiveWordsRepository,
+                                UndefinedWordsRepository $undefinedWordsRepository
     )
     {
         $this->repository = $repository;
@@ -84,13 +84,12 @@ class InputService extends AppService
         $labels = $this->sitesRepository->skipPresenter()->findWhere([
             'run' => 1,
             'error' => 0,
-        ],['id', 'name']);
+        ], ['id', 'name']);
 
 
-        $allData = [[],[],[]];
+        $allData = [[], [], []];
 
-        foreach ($labels as $l)
-        {
+        foreach ($labels as $l) {
             array_push($allData[0],
                 $this->repository->skipPresenter()
                     ->findWhere(['site_id' => $l->id, 'type_id' => InputTypeEnum::DADOS_PESSOAS])->count());
@@ -104,10 +103,10 @@ class InputService extends AppService
                     ->findWhere(['site_id' => $l->id, 'type_id' => InputTypeEnum::INDEFINIDOS])->count());
         }
 
-        return  [
-            'categories'    => $categories,
-            'labels'        => $labels,
-            'allData'       => $allData
+        return [
+            'categories' => $categories,
+            'labels' => $labels,
+            'allData' => $allData
         ];
     }
 
@@ -127,14 +126,13 @@ class InputService extends AppService
     {
         $data = [];
 
-        foreach ($labels as $l)
-        {
-            array_push($data,Inputs::query()->where('name', $l->name)->count());
+        foreach ($labels as $l) {
+            array_push($data, Inputs::query()->where('name', $l->name)->count());
         }
 
-        return  [
-            'labels'        => $labels,
-            'data'       => $data
+        return [
+            'labels' => $labels,
+            'data' => $data
         ];
     }
 

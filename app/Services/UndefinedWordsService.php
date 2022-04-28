@@ -28,7 +28,7 @@ class UndefinedWordsService extends AppService
     public function check($check)
     {
         return $this->repository->findWhere([
-            ['name', 'like', '%'. $check .'%']
+            ['name', 'like', '%' . $check . '%']
         ]);
     }
 }

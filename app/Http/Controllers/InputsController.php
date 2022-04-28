@@ -31,7 +31,7 @@ class InputsController extends Controller
     public function __construct(InputService $service, InputsValidator $validator)
     {
         $this->service = $service;
-        $this->validator  = $validator;
+        $this->validator = $validator;
     }
 
     public function allSitesInformation()

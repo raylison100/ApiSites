@@ -33,7 +33,7 @@ class UndefinedWordsController extends Controller
     public function __construct(UndefinedWordsService $service, UndefinedWordsValidator $validator)
     {
         $this->service = $service;
-        $this->validator  = $validator;
+        $this->validator = $validator;
     }
 
     /**

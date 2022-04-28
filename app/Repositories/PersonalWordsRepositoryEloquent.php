@@ -2,12 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Presenters\PersonalWordsPresenter;
-use Prettus\Repository\Eloquent\BaseRepository;
-use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\PersonalWordsRepository;
 use App\Entities\PersonalWords;
+use App\Presenters\PersonalWordsPresenter;
 use App\Validators\PersonalWordsValidator;
+use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
  * Class PersonalWordsRepositoryEloquent.
@@ -27,10 +25,10 @@ class PersonalWordsRepositoryEloquent extends BaseRepository implements Personal
     }
 
     /**
-    * Specify Validator class name
-    *
-    * @return mixed
-    */
+     * Specify Validator class name
+     *
+     * @return mixed
+     */
     public function validator()
     {
 

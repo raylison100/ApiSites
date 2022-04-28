@@ -25,10 +25,10 @@ class SensitiveWordsRepositoryEloquent extends BaseRepository implements Sensiti
     }
 
     /**
-    * Specify Validator class name
-    *
-    * @return mixed
-    */
+     * Specify Validator class name
+     *
+     * @return mixed
+     */
     public function validator()
     {
 

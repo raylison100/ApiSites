@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Repositories\SitesRepository;
 use App\Criterias\FilterBySiteRunCriteria;
+use App\Repositories\SitesRepository;
 
 /**
  * Class SiteService
@@ -31,9 +31,9 @@ class SiteService extends AppService
      */
     public function all(int $limit = 15)
     {
-       return $this->repository
-        ->resetCriteria()
-        ->pushCriteria(app(FilterBySiteRunCriteria::class))
-        ->paginate($limit);
+        return $this->repository
+            ->resetCriteria()
+            ->pushCriteria(app(FilterBySiteRunCriteria::class))
+            ->paginate($limit);
     }
 }

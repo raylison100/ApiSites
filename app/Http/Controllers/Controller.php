@@ -50,10 +50,10 @@ class Controller extends BaseController
         if ($this->validator) {
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
         }
-        try{
+        try {
             $response = $this->service->create($request->all());
             return response()->json($response);
-        }catch (Exception $e){
+        } catch (Exception $e) {
             return $this->returnError($e->getMessage(), $e->getCode());
         }
     }
@@ -69,10 +69,10 @@ class Controller extends BaseController
         if ($this->validator) {
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
         }
-        try{
+        try {
             $response = response()->json($this->service->update($request->all(), $id));
             return response()->json($response);
-        }catch (Exception $e){
+        } catch (Exception $e) {
             return $this->returnError($e->getMessage(), $e->getCode());
         }
     }
@@ -114,8 +114,8 @@ class Controller extends BaseController
     protected function returnError($message, $error): JsonResponse
     {
         return response()->json([
-            "error"       => true,
+            "error" => true,
             'message' => $message,
         ], $error);
     }
-  }
+}

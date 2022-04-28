@@ -33,7 +33,7 @@ class PersonalWordsController extends Controller
     public function __construct(PersonalWordsService $service, PersonalWordsValidator $validator)
     {
         $this->service = $service;
-        $this->validator  = $validator;
+        $this->validator = $validator;
     }
 
     /**

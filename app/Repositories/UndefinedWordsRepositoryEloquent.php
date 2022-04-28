@@ -2,12 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Presenters\UndefinedWordsPresenter;
-use Prettus\Repository\Eloquent\BaseRepository;
-use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\UndefinedWordsRepository;
 use App\Entities\UndefinedWords;
+use App\Presenters\UndefinedWordsPresenter;
 use App\Validators\UndefinedWordsValidator;
+use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
  * Class UndefinedWordsRepositoryEloquent.
@@ -27,10 +25,10 @@ class UndefinedWordsRepositoryEloquent extends BaseRepository implements Undefin
     }
 
     /**
-    * Specify Validator class name
-    *
-    * @return mixed
-    */
+     * Specify Validator class name
+     *
+     * @return mixed
+     */
     public function validator()
     {
 
